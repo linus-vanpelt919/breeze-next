@@ -1,5 +1,21 @@
 import 'tailwindcss/tailwind.css'
+import { ChakraProvider,extendTheme } from "@chakra-ui/react";
 
-const App = ({ Component, pageProps }) => <Component {...pageProps} />
+const colors = {
+    brand: {
+        900: '#1a365d',
+        800: '#153e75',
+        700: '#2a69ac',
+    },
+}
+const theme = extendTheme({ colors })
+
+const App = ({ Component, pageProps }) => {
+  return (
+    // <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    // </ChakraProvider>
+  )
+}
 
 export default App
